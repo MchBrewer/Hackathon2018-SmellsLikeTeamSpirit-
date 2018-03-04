@@ -17,18 +17,18 @@ class window(wx.Frame):
         
         self.sumBTN     = wx.Button     (self.panel,    label=u'\u03A3',            pos=(10,10),            size=(100,20))
         self.piBTN      = wx.Button     (self.panel,    label=u'\u03A0',            pos=(125, 10),          size=(100,20))
-        self.commitBTN  = wx.Button     (self.panel,    label="Convert",            pos=(362,225),          size=(100,20))
+        self.commitBTN  = wx.Button     (self.panel,    label="Convert",            pos=(350,225),          size=(100,20))
         self.formulaType = ""
         
-        self.sumBTN.Bind(wx.EVT_BUTTON, self.sumClick)
-        self.piBTN.Bind(wx.EVT_BUTTON, self.piClick)
-        self.commitBTN.Bind(wx.EVT_BUTTON, self.convertClick)
+        self.sumBTN.Bind                (wx.EVT_BUTTON, self.sumClick)
+        self.piBTN.Bind                 (wx.EVT_BUTTON, self.piClick)
+        self.commitBTN.Bind             (wx.EVT_BUTTON, self.convertClick)
         
-        self.placeHolder= wx.StaticText (self.Input,    label="INPUT",             pos=(50,45),            size=(25,25))
-        self.placeHolder.SetFont        (wx.Font(75,   wx.ROMAN,                   wx.ITALIC,              wx.NORMAL))
+        self.placeHolder= wx.StaticText (self.Input,    label="INPUT",              pos=(50,45),            size=(25,25))
+        self.placeHolder.SetFont        (wx.Font(75,    wx.ROMAN,                   wx.ITALIC,              wx.NORMAL))
         
-        self.codeOutput = wx.TextCtrl (self.Output, -1, "Code Output Here",         pos=(5, 5),      size=(300,200), style=wx.TE_MULTILINE)
-        self.codeOutput.SetModified(False)
+        self.codeOutput = wx.TextCtrl   (self.Output, -1, "Code Output Here",       pos=(5, 5),             size=(300,200), style=wx.TE_MULTILINE)
+        self.codeOutput.SetModified     (False)
         self.codeOutput.SetBackgroundColour('white')
         
         
@@ -37,7 +37,7 @@ class window(wx.Frame):
             child.Destroy()
 
         self.symbol     = wx.StaticText (self.Input, label=u'\u03A3',               pos=(25,50),            size=(75,75))
-        self.symbol.SetFont(wx.Font(100, wx.ROMAN, wx.BOLD, wx.NORMAL)) 
+        self.symbol.SetFont (wx.Font(100, wx.ROMAN, wx.BOLD, wx.NORMAL)) 
         
         self.varTop     = wx.TextCtrl   (self.Input, -1,   "i",                     pos=(25,45),            size=(25,25))
         self.equSign1   = wx.StaticText (self.Input, label="=",                     pos=(50,45),            size=(25,25))
@@ -45,7 +45,7 @@ class window(wx.Frame):
         self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k**2",                  pos=(120,100),          size=(150,25))
         self.varBtm     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,150),           size=(25,25))
         self.equSign2   = wx.StaticText (self.Input, label="=",                     pos=(50,150),           size=(25,25))
-        self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "0",                     pos=(65,150),           size=(25,25))
+        self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "0",                     pos=(65,150),           size=(50,25))
 
 
         self.formulaType = "sigma"
@@ -63,7 +63,7 @@ class window(wx.Frame):
         self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k**2",                  pos=(120,100),          size=(150,25))
         self.varBtm     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,150),           size=(25,25))
         self.equSign2   = wx.StaticText (self.Input, label="=",                     pos=(50,150),           size=(25,25))
-        self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "0",                     pos=(65,150),           size=(25,25))
+        self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "0",                     pos=(65,150),           size=(50,25))
         
         self.formulaType = "pi"
         
