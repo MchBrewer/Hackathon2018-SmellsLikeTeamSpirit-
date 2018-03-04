@@ -1,7 +1,7 @@
-_function_ = 0
-_i_ = 0
-_n_ = 0
+_function_ = None
+_i_ = None
+_n_ = None
 
-_result_ = 0
+_result_ = None
 for _k_ in xrange(_i_, _n_+1):
      _result_ += _function_(_k_)
