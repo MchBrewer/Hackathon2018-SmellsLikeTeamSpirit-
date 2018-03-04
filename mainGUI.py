@@ -16,12 +16,16 @@ class window(wx.Frame):
         self.panel.SetBackgroundColour  ("grey")
         
         self.sumBTN     = wx.Button     (self.panel,    label=u'\u03A3',            pos=(10,10),            size=(100,20))
+        self.permutationBTN = wx.Button  (self.panel,    label='aPb',                pos=(10,40),            size=(100,20))
         self.piBTN      = wx.Button     (self.panel,    label=u'\u03A0',            pos=(125, 10),          size=(100,20))
+        self.combinationBTN = wx.Button (self.panel,    label='aCb',                pos=(125,40),            size=(100,20))
         self.commitBTN  = wx.Button     (self.panel,    label="Convert",            pos=(362,225),          size=(100,20))
         
         self.sumBTN.Bind(wx.EVT_BUTTON, self.sumClick)
         self.piBTN.Bind(wx.EVT_BUTTON, self.piClick)
         self.commitBTN.Bind(wx.EVT_BUTTON, self.convertClick)
+        self.permutationBTN.Bind(wx.EVT_BUTTON, self.permutationClick)
+        self.combinationBTN.Bind(wx.EVT_BUTTON, self.combinationClick)
         
         self.symbol     = wx.StaticText (self.Input, label=u'\u03A3',               pos=(25,50),            size=(75,75))
         self.symbol.SetFont(wx.Font(100, wx.ROMAN, wx.BOLD, wx.NORMAL)) 
@@ -87,6 +91,11 @@ class window(wx.Frame):
         code = formula.getCode()
         self.codeOutput.SetValue(code)
     
+    def permutationClick(self, evt):
+        self.funcInput.SetValue(self.funcInput.GetValue() + "factorial(a) / factorial(a-b)")
+    
+    def combinationClick(self, evt):
+        self.funcInput.SetValue(self.funcInput.GetValue() + "factorial(a) / (factorial(a - b) * factorial(b))")
 
 def main():
     x = 800
