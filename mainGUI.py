@@ -17,7 +17,6 @@ class window(wx.Frame):
         
         self.sumBTN     = wx.Button     (self.panel,    label=u'\u03A3',            pos=(10,10),            size=(100,20))
         self.piBTN      = wx.Button     (self.panel,    label=u'\u03A0',            pos=(125, 10),          size=(100,20))
-
         self.commitBTN  = wx.Button     (self.panel,    label="Convert",            pos=(350,225),          size=(100,20))
         self.formulaType = ""
         
@@ -25,13 +24,15 @@ class window(wx.Frame):
         self.piBTN.Bind                 (wx.EVT_BUTTON, self.piClick)
         self.commitBTN.Bind             (wx.EVT_BUTTON, self.convertClick)
         
-<<<<<<< HEAD
         self.placeHolder= wx.StaticText (self.Input,    label="INPUT",              pos=(50,45),            size=(25,25))
         self.placeHolder.SetFont        (wx.Font(75,    wx.ROMAN,                   wx.ITALIC,              wx.NORMAL))
     
         self.codeOutput = wx.TextCtrl   (self.Output, -1, "Code Output Here",       pos=(5, 5),             size=(300,200), style=wx.TE_MULTILINE)
         self.codeOutput.SetModified     (False)
         self.codeOutput.SetBackgroundColour('white')
+        
+        self.supportedLanguages = ["Python"]
+        self.languges   = wx.Choice(self.Output, -1, pos=(205,202), size=(100,25), choices = self.supportedLanguages)
         
         
     def sumClick(self, evt):
