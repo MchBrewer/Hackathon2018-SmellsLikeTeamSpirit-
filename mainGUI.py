@@ -18,12 +18,18 @@ class window(wx.Frame):
         self.piBTN      = wx.Button (self.panel,    label="pi",     pos=(85, 10),   size=(75,25))
         
         self.sumBTN.Bind(wx.EVT_BUTTON, self.sumClick)
+        self.piBTN.Bind(wx.EVT_BUTTON, self.piClick)
         
         
     def sumClick(self, evt):
-        self.sumInTop   = wx.TextCtrl(self.Input, -1,   "1",         pos=(10,55),    size=(25,25))
-        self.fuctInput  = wx.TextCtrl(self.Input, -1,   "2",         pos=(20,85),      size=(150,25))
-        self.sumInBtm   = wx.TextCtrl(self.Input, -1,   "3",         pos=(10,115),    size=(25,25))
+        self.sumInTop   = wx.TextCtrl(self.Input, -1,   "1",         pos=(10,55),       size=(25,25))
+        self.funcInput  = wx.TextCtrl(self.Input, -1,   "2",         pos=(25,85),       size=(150,25))
+        self.sumInBtm   = wx.TextCtrl(self.Input, -1,   "3",         pos=(10,115),      size=(25,25))
+    
+    def piClick(self, evt):
+        self.sumInTop   = wx.TextCtrl(self.Input, -1,   "4",        pos=(10,55),        size=(25,25))
+        self.funcInput   = wx.TextCtrl(self.Input, -1,   "4",        pos=(25,85),        size=(25,25))
+        self.sumInOut   = wx.TextCtrl(self.Input, -1,   "4",        pos=(10,115),        size=(25,25))
         
         
 def main():
