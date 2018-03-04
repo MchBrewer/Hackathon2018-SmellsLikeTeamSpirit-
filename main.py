@@ -1,1 +1,2 @@
-print "Hello World"
+execfile('mainGUI.py')
+execfile('formula.py')
