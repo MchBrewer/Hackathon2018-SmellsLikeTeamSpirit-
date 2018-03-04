@@ -8,12 +8,14 @@ class Formula(object):
     def __init__(self, formulaType, parameters, variableNames, markdown):
         self.formulaType = formulaType
         self.parameters = parameters
-        self.lambdaFunction = getLambdaFunctionFrom(markdown)
+        self.variableNames = variableNames
+        self.lambdaFunction = self.getLambdaFunctionFrom(markdown)
         self.parameters["_function_"] = self.lambdaFunction
         self.code = self.getCodeFor(formulaType, parameters)
     
     def getLambdaFunctionFrom(self, markdown):
         converted_markdown = self.convertSquareRootsIn(markdown)
+        converted_markdown = converted_markdown.replace(self.variableNames["_k_"], "_k_")
         return converted_markdown
     
     def convertSquareRootsIn(self, markdown):
@@ -74,5 +76,5 @@ class Formula(object):
         for old_name, new_name in parameters.items():
             self.code = self.code.replace(old_name, new_name)
             
-    def printCode(self):
-        print self.code
+    def getCode(self):
+        return self.code
