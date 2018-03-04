@@ -26,11 +26,11 @@ class window(wx.Frame):
         self.symbol     = wx.StaticText (self.Input, label=u'\u03A3',               pos=(25,50),            size=(75,75))
         self.symbol.SetFont(wx.Font(100, wx.ROMAN, wx.BOLD, wx.NORMAL)) 
         
-        self.varTop     = wx.TextCtrl   (self.Input, -1,   "i",                     pos=(25,45),            size=(25,25))
+        self.varTop     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,45),            size=(25,25))
         self.equSign1   = wx.StaticText (self.Input, label="=",                     pos=(50,45),            size=(25,25))
         self.sumInTop   = wx.TextCtrl   (self.Input, -1,   "10",                    pos=(65,45),            size=(50,25))
         self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                  pos=(130,120),          size=(150,25))
-        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,185),           size=(25,25))
+        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "k",                     pos=(25,185),           size=(25,25))
         self.equSign2   = wx.StaticText (self.Input, label="=",                     pos=(50,185),           size=(25,25))
         self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "1",                     pos=(65,185),           size=(25,25))
         self.formulaType = "sigma"
@@ -47,11 +47,11 @@ class window(wx.Frame):
         self.symbol     = wx.StaticText (self.Input, label=u'\u03A3',               pos=(25,50),            size=(75,75))
         self.symbol.SetFont(wx.Font(100, wx.ROMAN, wx.BOLD, wx.NORMAL)) 
         
-        self.varTop     = wx.TextCtrl   (self.Input, -1,   "i",                     pos=(25,45),            size=(25,25))
+        self.varTop     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,45),            size=(25,25))
         self.equSign1   = wx.StaticText (self.Input, label="=",                     pos=(50,45),            size=(25,25))
         self.sumInTop   = wx.TextCtrl   (self.Input, -1,   "10",                    pos=(65,45),            size=(50,25))
         self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                  pos=(130,120),          size=(150,25))
-        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,185),           size=(25,25))
+        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "k",                     pos=(25,185),           size=(25,25))
         self.equSign2   = wx.StaticText (self.Input, label="=",                     pos=(50,185),           size=(25,25))
         self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "1",                     pos=(65,185),           size=(25,25))
         self.formulaType = "sigma"
@@ -63,11 +63,11 @@ class window(wx.Frame):
         self.symbol     = wx.StaticText (self.Input, label=u'\u03A0',               pos=(25,50),            size=(75,75))
         self.symbol.SetFont(wx.Font(100, wx.ROMAN, wx.BOLD, wx.NORMAL))     
             
-        self.varTop     = wx.TextCtrl   (self.Input, -1,   "i",                     pos=(25,45),            size=(25,25))
+        self.varTop     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,45),            size=(25,25))
         self.equSign1   = wx.StaticText (self.Input, label="=",                     pos=(50,45),            size=(25,25))
         self.sumInTop   = wx.TextCtrl   (self.Input, -1,   "10",                    pos=(65,45),            size=(50,25))
         self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                  pos=(130,120),          size=(150,25))
-        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,185),           size=(25,25))
+        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "k",                     pos=(25,185),           size=(25,25))
         self.equSign2   = wx.StaticText (self.Input, label="=",                     pos=(50,185),           size=(25,25))
         self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "1",                     pos=(65,185),           size=(25,25))
         
