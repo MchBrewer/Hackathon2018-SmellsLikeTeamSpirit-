@@ -18,6 +18,7 @@ class window(wx.Frame):
         self.sumBTN     = wx.Button     (self.panel,    label=u'\u03A3',            pos=(10,10),            size=(100,20))
         self.permutationBTN = wx.Button  (self.panel,    label='aPb',                pos=(10,40),            size=(100,20))
         self.piBTN      = wx.Button     (self.panel,    label=u'\u03A0',            pos=(125, 10),          size=(100,20))
+<<<<<<< HEAD
         self.combinationBTN = wx.Button (self.panel,    label='aCb',                pos=(125,40),            size=(100,20))
         self.commitBTN  = wx.Button     (self.panel,    label="Convert",            pos=(362,225),          size=(100,20))
         
@@ -27,21 +28,15 @@ class window(wx.Frame):
         self.permutationBTN.Bind(wx.EVT_BUTTON, self.permutationClick)
         self.combinationBTN.Bind(wx.EVT_BUTTON, self.combinationClick)
         
-        self.symbol     = wx.StaticText (self.Input, label=u'\u03A3',               pos=(25,50),            size=(75,75))
-        self.symbol.SetFont(wx.Font(100, wx.ROMAN, wx.BOLD, wx.NORMAL)) 
-        
-        self.varTop     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,45),            size=(25,25))
-        self.equSign1   = wx.StaticText (self.Input, label="=",                     pos=(50,45),            size=(25,25))
-        self.sumInTop   = wx.TextCtrl   (self.Input, -1,   "10",                    pos=(65,45),            size=(50,25))
-        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                  pos=(130,120),          size=(150,25))
-        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "k",                     pos=(25,185),           size=(25,25))
-        self.equSign2   = wx.StaticText (self.Input, label="=",                     pos=(50,185),           size=(25,25))
-        self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "1",                     pos=(65,185),           size=(25,25))
-        self.formulaType = "sigma"
-        
-        self.codeOutput = wx.TextCtrl (self.Output, -1, "Code Output Here",         pos=(5, 5),      size=(300,200), style=wx.TE_MULTILINE)
-        self.codeOutput.SetModified(False)
+        self.placeHolder= wx.StaticText (self.Input,    label="INPUT",              pos=(50,45),            size=(25,25))
+        self.placeHolder.SetFont        (wx.Font(75,    wx.ROMAN,                   wx.ITALIC,              wx.NORMAL))
+    
+        self.codeOutput = wx.TextCtrl   (self.Output, -1, "Code Output Here",       pos=(5, 5),             size=(300,200), style=wx.TE_MULTILINE)
+        self.codeOutput.SetModified     (False)
         self.codeOutput.SetBackgroundColour('white')
+        
+        self.supportedLanguages = ["Python"]
+        self.languges   = wx.Choice(self.Output, -1, pos=(205,202), size=(100,25), choices = self.supportedLanguages)
         
         
     def sumClick(self, evt):
@@ -49,15 +44,16 @@ class window(wx.Frame):
             child.Destroy()
 
         self.symbol     = wx.StaticText (self.Input, label=u'\u03A3',               pos=(25,50),            size=(75,75))
-        self.symbol.SetFont(wx.Font(100, wx.ROMAN, wx.BOLD, wx.NORMAL)) 
+        self.symbol.SetFont (wx.Font(100, wx.ROMAN, wx.BOLD, wx.NORMAL)) 
         
         self.varTop     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,45),            size=(25,25))
         self.equSign1   = wx.StaticText (self.Input, label="=",                     pos=(50,45),            size=(25,25))
         self.sumInTop   = wx.TextCtrl   (self.Input, -1,   "10",                    pos=(65,45),            size=(50,25))
-        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                  pos=(130,120),          size=(150,25))
-        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "k",                     pos=(25,185),           size=(25,25))
+        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                     pos=(130,120),          size=(150,25))
+        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,185),           size=(25,25))
         self.equSign2   = wx.StaticText (self.Input, label="=",                     pos=(50,185),           size=(25,25))
         self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "1",                     pos=(65,185),           size=(25,25))
+        
         self.formulaType = "sigma"
         
     def piClick(self, evt):
@@ -70,7 +66,7 @@ class window(wx.Frame):
         self.varTop     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,45),            size=(25,25))
         self.equSign1   = wx.StaticText (self.Input, label="=",                     pos=(50,45),            size=(25,25))
         self.sumInTop   = wx.TextCtrl   (self.Input, -1,   "10",                    pos=(65,45),            size=(50,25))
-        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                  pos=(130,120),          size=(150,25))
+        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                     pos=(130,120),          size=(150,25))
         self.varBtm     = wx.TextCtrl   (self.Input, -1,   "k",                     pos=(25,185),           size=(25,25))
         self.equSign2   = wx.StaticText (self.Input, label="=",                     pos=(50,185),           size=(25,25))
         self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "1",                     pos=(65,185),           size=(25,25))
