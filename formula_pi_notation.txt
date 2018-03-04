@@ -1,7 +1,7 @@
-_function_ = None
+function = None
 _i_ = None
 _n_ = None
 
-_result_ = None
+result = None
 for _k_ in xrange(_i_, _n_+1):
-     _result_ *= _function_(_k_)
+     result *= function(float(_k_))

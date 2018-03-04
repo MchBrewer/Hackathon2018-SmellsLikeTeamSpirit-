@@ -17,6 +17,7 @@ class window(wx.Frame):
         
         self.sumBTN     = wx.Button     (self.panel,    label=u'\u03A3',            pos=(10,10),            size=(100,20))
         self.piBTN      = wx.Button     (self.panel,    label=u'\u03A0',            pos=(125, 10),          size=(100,20))
+
         self.commitBTN  = wx.Button     (self.panel,    label="Convert",            pos=(350,225),          size=(100,20))
         self.formulaType = ""
         
@@ -42,12 +43,12 @@ class window(wx.Frame):
         self.varTop     = wx.TextCtrl   (self.Input, -1,   "i",                     pos=(25,45),            size=(25,25))
         self.equSign1   = wx.StaticText (self.Input, label="=",                     pos=(50,45),            size=(25,25))
         self.sumInTop   = wx.TextCtrl   (self.Input, -1,   "10",                    pos=(65,45),            size=(50,25))
-        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k**2",                  pos=(120,100),          size=(150,25))
-        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,150),           size=(25,25))
-        self.equSign2   = wx.StaticText (self.Input, label="=",                     pos=(50,150),           size=(25,25))
-        self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "0",                     pos=(65,150),           size=(50,25))
 
-
+        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                     pos=(130,120),          size=(150,25))
+        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,185),           size=(25,25))
+        self.equSign2   = wx.StaticText (self.Input, label="=",                     pos=(50,185),           size=(25,25))
+        self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "1",                     pos=(65,185),           size=(25,25))
+        
         self.formulaType = "sigma"
         
     def piClick(self, evt):
@@ -60,25 +61,23 @@ class window(wx.Frame):
         self.varTop     = wx.TextCtrl   (self.Input, -1,   "i",                     pos=(25,45),            size=(25,25))
         self.equSign1   = wx.StaticText (self.Input, label="=",                     pos=(50,45),            size=(25,25))
         self.sumInTop   = wx.TextCtrl   (self.Input, -1,   "10",                    pos=(65,45),            size=(50,25))
-        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k**2",                  pos=(120,100),          size=(150,25))
-        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,150),           size=(25,25))
-        self.equSign2   = wx.StaticText (self.Input, label="=",                     pos=(50,150),           size=(25,25))
-        self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "0",                     pos=(65,150),           size=(50,25))
+        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                     pos=(130,120),          size=(150,25))
+        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,185),           size=(25,25))
+        self.equSign2   = wx.StaticText (self.Input, label="=",                     pos=(50,185),           size=(25,25))
+        self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "1",                     pos=(65,185),           size=(25,25))
         
         self.formulaType = "pi"
-        
-        
     
     def convertClick(self, evt):
-        expression = "lambda x: " + self.funcInput.GetValue()
+        expression = "lambda " + self.varBtm.GetValue() + ": " + self.funcInput.GetValue()
         parameters = {}
         parameters["_n_"] = self.sumInTop.GetValue()
         parameters["_i_"] = self.sumInBtm.GetValue()
-        parameters["_result_"] = 0
+        parameters["result"] = 0.0
         variableNames = {}
         variableNames["_n_"] = self.varTop.GetValue()
         variableNames["_k_"] = self.varBtm.GetValue()
-        variableNames["_result_"] = "result"
+        variableNames["_i_"] = "i"
         formula = Formula(self.formulaType, parameters, variableNames, expression)
         code = formula.getCode()
         self.codeOutput.SetValue(code)
