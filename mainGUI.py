@@ -27,7 +27,7 @@ class window(wx.Frame):
         self.varTop     = wx.TextCtrl   (self.Input, -1,   "n",                 pos=(10,55),        size=(25,25))
         self.equSign1   = wx.StaticText (self.Input, label="=",                 pos=(35,55),        size=(25,25))
         self.sumInTop   = wx.TextCtrl   (self.Input, -1,   "10",                 pos=(60,55),        size=(25,25))
-        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k**2",                 pos=(85,85),        size=(150,25))
+        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                 pos=(85,85),        size=(150,25))
         self.varBtm     = wx.TextCtrl   (self.Input, -1,   "k",                 pos=(10,115),       size=(25,25))
         self.equSign2   = wx.StaticText (self.Input, label="=",                 pos=(35,115),       size=(25,25))
         self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "0",                 pos=(60,115),       size=(25,25))
@@ -48,7 +48,7 @@ class window(wx.Frame):
         self.varTop     = wx.TextCtrl   (self.Input, -1,   "n",                 pos=(10,55),        size=(25,25))
         self.equSign1   = wx.StaticText (self.Input, label="=",                 pos=(35,55),        size=(25,25))
         self.sumInTop   = wx.TextCtrl   (self.Input, -1,   "10",                 pos=(60,55),        size=(25,25))
-        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k**2",                 pos=(85,85),        size=(150,25))
+        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                 pos=(85,85),        size=(150,25))
         self.varBtm     = wx.TextCtrl   (self.Input, -1,   "k",                 pos=(10,115),       size=(25,25))
         self.equSign2   = wx.StaticText (self.Input, label="=",                 pos=(35,115),       size=(25,25))
         self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "0",                 pos=(60,115),       size=(25,25))
@@ -64,21 +64,21 @@ class window(wx.Frame):
         self.varTop     = wx.TextCtrl   (self.Input, -1,   "n",                 pos=(10,55),        size=(25,25))
         self.equSign1   = wx.StaticText (self.Input, label="=",                 pos=(35,55),        size=(25,25))
         self.sumInTop   = wx.TextCtrl   (self.Input, -1,   "10",                 pos=(60,55),        size=(25,25))
-        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k**2",                 pos=(85,85),        size=(150,25))
+        self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                 pos=(85,85),        size=(150,25))
         self.varBtm     = wx.TextCtrl   (self.Input, -1,   "k",                 pos=(10,115),       size=(25,25))
         self.equSign2   = wx.StaticText (self.Input, label="=",                 pos=(35,115),       size=(25,25))
         self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "1",                 pos=(60,115),       size=(25,25))
     
     def convertClick(self, evt):
-        expression = "lambda x: " + self.funcInput.GetValue()
+        expression = "lambda " + self.varBtm.GetValue() + ": " + self.funcInput.GetValue()
         parameters = {}
         parameters["_n_"] = self.sumInTop.GetValue()
         parameters["_i_"] = self.sumInBtm.GetValue()
-        parameters["_result_"] = 0
+        parameters["result"] = 0.0
         variableNames = {}
         variableNames["_n_"] = self.varTop.GetValue()
         variableNames["_k_"] = self.varBtm.GetValue()
-        variableNames["_result_"] = "result"
+        variableNames["_i_"] = "i"
         formula = Formula(self.formulaType, parameters, variableNames, expression)
         code = formula.getCode()
         self.codeOutput.SetValue(code)
