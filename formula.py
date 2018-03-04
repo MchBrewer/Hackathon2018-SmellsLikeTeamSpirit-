@@ -75,7 +75,9 @@ class Formula(object):
     
     def changeParameterNames(self, code, variableNames):
         changed_code = code
+        print variableNames
         for old_name, new_name in variableNames.items():
+            print old_name + " " + new_name
             changed_code = changed_code.replace(old_name, new_name)
         return changed_code
             

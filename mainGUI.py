@@ -25,9 +25,10 @@ class window(wx.Frame):
         self.piBTN.Bind                 (wx.EVT_BUTTON, self.piClick)
         self.commitBTN.Bind             (wx.EVT_BUTTON, self.convertClick)
         
+<<<<<<< HEAD
         self.placeHolder= wx.StaticText (self.Input,    label="INPUT",              pos=(50,45),            size=(25,25))
         self.placeHolder.SetFont        (wx.Font(75,    wx.ROMAN,                   wx.ITALIC,              wx.NORMAL))
-        
+    
         self.codeOutput = wx.TextCtrl   (self.Output, -1, "Code Output Here",       pos=(5, 5),             size=(300,200), style=wx.TE_MULTILINE)
         self.codeOutput.SetModified     (False)
         self.codeOutput.SetBackgroundColour('white')
@@ -40,10 +41,9 @@ class window(wx.Frame):
         self.symbol     = wx.StaticText (self.Input, label=u'\u03A3',               pos=(25,50),            size=(75,75))
         self.symbol.SetFont (wx.Font(100, wx.ROMAN, wx.BOLD, wx.NORMAL)) 
         
-        self.varTop     = wx.TextCtrl   (self.Input, -1,   "i",                     pos=(25,45),            size=(25,25))
+        self.varTop     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,45),            size=(25,25))
         self.equSign1   = wx.StaticText (self.Input, label="=",                     pos=(50,45),            size=(25,25))
         self.sumInTop   = wx.TextCtrl   (self.Input, -1,   "10",                    pos=(65,45),            size=(50,25))
-
         self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                     pos=(130,120),          size=(150,25))
         self.varBtm     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,185),           size=(25,25))
         self.equSign2   = wx.StaticText (self.Input, label="=",                     pos=(50,185),           size=(25,25))
@@ -58,11 +58,11 @@ class window(wx.Frame):
         self.symbol     = wx.StaticText (self.Input, label=u'\u03A0',               pos=(25,50),            size=(75,75))
         self.symbol.SetFont(wx.Font(100, wx.ROMAN, wx.BOLD, wx.NORMAL))     
             
-        self.varTop     = wx.TextCtrl   (self.Input, -1,   "i",                     pos=(25,45),            size=(25,25))
+        self.varTop     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,45),            size=(25,25))
         self.equSign1   = wx.StaticText (self.Input, label="=",                     pos=(50,45),            size=(25,25))
         self.sumInTop   = wx.TextCtrl   (self.Input, -1,   "10",                    pos=(65,45),            size=(50,25))
         self.funcInput  = wx.TextCtrl   (self.Input, -1,   "k",                     pos=(130,120),          size=(150,25))
-        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "n",                     pos=(25,185),           size=(25,25))
+        self.varBtm     = wx.TextCtrl   (self.Input, -1,   "k",                     pos=(25,185),           size=(25,25))
         self.equSign2   = wx.StaticText (self.Input, label="=",                     pos=(50,185),           size=(25,25))
         self.sumInBtm   = wx.TextCtrl   (self.Input, -1,   "1",                     pos=(65,185),           size=(25,25))
         
