@@ -1,0 +1,4 @@
+_n_ = None
+_r_ = None
+
+_result_ = factorial(_n_) / factorial(_n_ - _r_)

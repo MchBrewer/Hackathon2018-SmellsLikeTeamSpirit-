@@ -1,0 +1,7 @@
+function = None
+_i_ = None
+_n_ = None
+
+result = None
+for _k_ in xrange(_i_, _n_+1):
+     result += function(float(_k_))
